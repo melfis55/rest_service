@@ -19,9 +19,9 @@ php artisan serve
 
 request: 127.0.0.1:8000/userinfo/add
 
-body: {"firstname":"Vasea", "lastname": "Pupkin", "country": "Ukraine", "city": "Odessa", "street": "Pantelemonovska"}
+body: {"firstname":"Vasea", "lastname": "Pupkin", "country": "Ukraine", "city": "Odessa", "street": "kanatna"}
 
 query: 127.0.0.1:8000/userinfo/get/{firstname}/{lastname}
 
-response: {"status": 200, "firstname":"Vasea", "lastname": "Pupkin", "country": "Ukraine", "city": "Odessa", "street": "Pantelemonovska"}
+response: {"status": 200, "firstname":"Vasea", "lastname": "Pupkin", "country": "Ukraine", "city": "Odessa", "street": "kanatna"}
 
