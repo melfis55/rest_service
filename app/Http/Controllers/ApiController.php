@@ -46,7 +46,12 @@ class ApiController extends Controller
             )
         );
 
-        $json = json_decode(file_get_contents('https://nominatim.openstreetmap.org/search/'.$request->input('street').'%20den%20'.$request->input('city').'%20den%20'.$request->input('country').'?format=json&addressdetails=1&limit=1&polygon_svg=1', false, $context));
+        $urlStreet = str_replace(' ','%20den%20',$request->input('street'));
+        $urlCity = str_replace(' ','%20den%20',$request->input('city'));
+        $urlCountry = str_replace(' ','%20den%20',$request->input('country'));
+
+        $json = json_decode(file_get_contents('https://nominatim.openstreetmap.org/search/'.$urlStreet.'%20den%20'.$urlCity.'%20den%20'.$urlCountry.'?format=json&addressdetails=1&limit=1&polygon_svg=1', false, $context));
+
         if (!count($json)){
             return response()->json([
                 'status' => 406,
